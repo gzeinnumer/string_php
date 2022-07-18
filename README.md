@@ -5,6 +5,17 @@
 <?php
 
 //lower Upper next Upper
+function lUnUS($str)
+{
+    $t = explode("_", $str);
+    $res = "";
+    for ($i = 0; $i < count($t); $i++) {
+        $res = $res . ucfirst($t[$i] . " ");
+    }
+    return rtrim($res, " ");
+}
+
+//lower Upper next Upper
 function lUnU($str)
 {
     $t = explode("_", $str);
@@ -48,6 +59,8 @@ function uUnU($str)
 - Result
 ```php
 $str = "data_baru";
+echo "<br>";
+echo lUnUS($str); //data_baru TO Data Baru
 echo "<br>";
 echo lUnU($str); //data_baru TO DataBaru
 echo "<br>";
